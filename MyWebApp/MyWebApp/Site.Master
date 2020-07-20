@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MyWebApp.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <style type="text/css">
+
+        .accordionContent
+        {
+            border-color: #5078B3;
+            border-right: 1px dashed #2F4F4F;
+            border-style: none solid solid;
+            border-width: medium 1px 1px;
+            padding: 10px 5px 5px;
+            width: 66%;
+            text-align: left;
+            background-color: #A8A8A8;
+        }
+
+        .accordionHeader
+        {
+            cursor: pointer;
+            font-family: Arial,Sans-Serif;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #2F4F4F;
+            width: 66%;
+            background: url(Images/img-collapse.png) no-repeat 750px 7px;
+            background-color: #1F2F57;
+            color: white;
+            text-align: left;
+        }
+
+        .accordionHeaderSelected
+        {
+            color: white;
+            cursor: pointer;
+            font-family: Arial,Sans-Serif;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #2F4F4F;
+            width: 66%;
+            background: url(Images/img-expand.png) no-repeat 750px 7px;
+            background-color: #6091c3;
+            text-align: left;
+        }  
+
+        .button:hover {
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);         
+        }
+
+        .button{
+            background-color: #6091c3;
+            border: 1px solid black;
+            color: black;
+        }
+
+        .header {
+            font: bold;
+            font-family: Tahoma, Geneva, sans-serif;
+        }
+
+    </style>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">      
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
